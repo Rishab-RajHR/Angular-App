@@ -1,16 +1,19 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
-  imports: [RouterOutlet],
+  imports: [],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
 })
 export class App {
-  protected readonly title = signal('angular');
-  name = "Angular Tutorial";
-  username = "alexpandian";
-  isAdmin = true;
-  count = 3;
+   name = "Angular Tutorial";
+   isAdmin = true;
+   count = 5;
+   price = 199.99;
+   isLogin = true;
+   title = signal("Angular Tutorial Signal");
+   getUser(){
+      return "Tovino Thomas";
+   }
 }
