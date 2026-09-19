@@ -1,9 +1,9 @@
-<h1>Datatype</h1>
-
+<!-- Events -->
 <button (click)="handleClick()">Click Me</button>
 
-<h2>{{name}}</h2>
-<h2>{{age}}</h2>
-<h2>{{isValid}}</h2>
 
-<button (click)="sum(12,24)">Sum</button>
+<input (input)="onTyping($event)" placeholder="Typed Something..."/>
+
+<input (keyup)="onKeyUp($event)" (blur)="onBlur()" (focus)="onFocus()"  placeholder="Press any Key"/>
+
+<div (mouseover)="onHover()" (mouseleave)="onLeave()" class="hover-box">Hover Text</div>

@@ -7,23 +7,32 @@ import { Component, signal } from '@angular/core';
   templateUrl: './app.html',
 })
 export class App {
-    // value = 10;
-
-    // value = "Alex";
-
-    name : unknown | number = 'Tovino';
-    age: number = 12;
-    isValid: boolean = true;
-
-    handleClick() {
-      let value;
-      value = "Alex Pandian"
-      value = 12;
-      console.log(value);
+    handleClick(){
+        console.log("Button Clicked");
     }
 
-    sum(a: number, b:number){
-      console.log(a+b);
-      //  return a+b;
+    onTyping(event: any){
+       console.log("Typed", event.target.value);
     }
+
+    onKeyUp(event: any){
+      console.log("Key Up Event", event.key);
+    }
+
+    onHover(){
+      console.log("Hover event");
+    }
+
+    onLeave(){
+      console.log("Leave event");
+    }
+
+    onBlur(){
+      console.log("Blur event");
+    }
+
+    onFocus(){
+      console.log("Focus event");
+    }
+
 }
