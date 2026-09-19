@@ -7,16 +7,23 @@ import { Component, signal } from '@angular/core';
   templateUrl: './app.html',
 })
 export class App {
-    //  name = 'Alex';
-    count = 0;
+    // value = 10;
 
-    handleClick(){
-      let abc = "baad";
-      console.log("Button clicked", abc);
-      this.helloWorld();
+    // value = "Alex";
+
+    name : unknown | number = 'Tovino';
+    age: number = 12;
+    isValid: boolean = true;
+
+    handleClick() {
+      let value;
+      value = "Alex Pandian"
+      value = 12;
+      console.log(value);
     }
 
-    helloWorld(){
-      console.log("Hello World");
+    sum(a: number, b:number){
+      console.log(a+b);
+      //  return a+b;
     }
 }
