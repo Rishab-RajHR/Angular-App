@@ -3,19 +3,17 @@ import { Component, signal } from '@angular/core';
 @Component({
   imports: [],
   selector: 'app-root',
-  styleUrl: './app.css',
-  templateUrl: './app.html',
+  // styles: [`
+  //      .box{
+  //         background-color: lightblue;
+  //         padding: 20px;
+  //         text-align: center;
+  //      }
+  //   `],
+  // template: `<h2 class="box">Welcome to the App!</h2>`,
+  templateUrl:'./app.html',
+  styleUrls: ['./app.css', './buttons.css']
 })
 export class App {
-    name: string = "";
-    city: string = "";
-    email: string = "";
 
-    updateName(val: string){
-      this.name = val;
-    }
-
-    getEmail(val: string){
-       this.email = val;
-    }
 }
