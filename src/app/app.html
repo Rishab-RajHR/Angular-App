@@ -1,9 +1,12 @@
-<!-- Events -->
-<button (click)="handleClick()">Click Me</button>
+<h1>Simple Counter App</h1>
 
+<p class="count">{{count}}</p>
 
-<input (input)="onTyping($event)" placeholder="Typed Something..."/>
-
-<input (keyup)="onKeyUp($event)" (blur)="onBlur()" (focus)="onFocus()"  placeholder="Press any Key"/>
-
-<div (mouseover)="onHover()" (mouseleave)="onLeave()" class="hover-box">Hover Text</div>
+<div class="btns">
+     <!-- <button (click)="handleAdd()">+</button>
+     <button (click)="handleMinus()">-</button>
+     <button (click)="handleReset()">Reset</button> -->
+     <button (click)="handle('plus')">+</button>
+     <button (click)="handle('minus')">-</button>
+     <button (click)="handle('reset')">Reset</button>
+</div>

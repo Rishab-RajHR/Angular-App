@@ -7,32 +7,31 @@ import { Component, signal } from '@angular/core';
   templateUrl: './app.html',
 })
 export class App {
-    handleClick(){
-        console.log("Button Clicked");
-    }
+   count: number = 0;
 
-    onTyping(event: any){
-       console.log("Typed", event.target.value);
-    }
+  //  handleAdd(){
+  //    this.count++;
+  //  }
 
-    onKeyUp(event: any){
-      console.log("Key Up Event", event.key);
-    }
+  //  handleMinus(){
+  //     if(this.count > 0){
+  //        this.count--;
+  //     }
+  //  }
 
-    onHover(){
-      console.log("Hover event");
-    }
+  //  handleReset(){
+  //     this.count = 0;
+  //  }
 
-    onLeave(){
-      console.log("Leave event");
+  handle(value: string){
+    if(value === 'plus'){
+        this.count++;
     }
-
-    onBlur(){
-      console.log("Blur event");
+    else if(value === 'minus'){
+       this.count--;
+    }else if (value === 'reset'){
+        this.count = 0;
     }
-
-    onFocus(){
-      console.log("Focus event");
-    }
+  }
 
 }
