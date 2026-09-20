@@ -7,31 +7,15 @@ import { Component, signal } from '@angular/core';
   templateUrl: './app.html',
 })
 export class App {
-   count: number = 0;
+    name: string = "";
+    city: string = "";
+    email: string = "";
 
-  //  handleAdd(){
-  //    this.count++;
-  //  }
-
-  //  handleMinus(){
-  //     if(this.count > 0){
-  //        this.count--;
-  //     }
-  //  }
-
-  //  handleReset(){
-  //     this.count = 0;
-  //  }
-
-  handle(value: string){
-    if(value === 'plus'){
-        this.count++;
+    updateName(val: string){
+      this.name = val;
     }
-    else if(value === 'minus'){
-       this.count--;
-    }else if (value === 'reset'){
-        this.count = 0;
-    }
-  }
 
+    getEmail(val: string){
+       this.email = val;
+    }
 }
