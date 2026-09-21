@@ -7,19 +7,12 @@ import { Component, signal } from '@angular/core';
   styleUrls: ['./app.css']
 })
 export class App {
-    isLoggedIn = true;
+    value: string = 'contact';
 
-    marks = 65;
+    tab = 'home';
 
-    showBox = true;
-
-    toggleBox() {
-      this.showBox = !this.showBox;
-    }
-
-    age = 0;
-
-    updateAge(val: string){
-       this.age = Number(val);
+    categories = '';
+    updateCat(val: string) {
+       this.categories = val.toLowerCase();
     }
 }
