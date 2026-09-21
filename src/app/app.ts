@@ -7,12 +7,17 @@ import { Component, signal } from '@angular/core';
   styleUrls: ['./app.css']
 })
 export class App {
-    value: string = 'contact';
+  //  items = ['HTML','CSS','JavaScript', 'Angular'];
 
-    tab = 'home';
+  //  users = [
+  //    { name: 'Alex', age: 24 },
+  //    { name: 'John', age: 30 },
+  //    { name: 'Alice', age: 28 }
+  //  ];
 
-    categories = '';
-    updateCat(val: string) {
-       this.categories = val.toLowerCase();
-    }
+  items = ['Apple', 'Banana', 'Cherry', 'Date'];
+
+  removeItem(i: number) {
+    this.items.splice(i, 1);
+  }
 }
