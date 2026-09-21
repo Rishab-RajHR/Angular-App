@@ -1,17 +1,35 @@
+<!-- @for (item of items; track $index;
+let i = $index;
+let c = $count) {
+    <p>{{i+1}} -> {{item}}</p>
+    <p>Total Count: {{c}}</p>
+} -->
+
+<!--
+@for (item of items; track $index) {
+   @if($first){
+      <p>First Item: {{item}}</p>
+   } @else {
+      <p>{{item}}</p>
+   }
+} -->
+
+
 <!-- @for (item of items; track $index) {
-    <p>{{$index+1}}{{item}}</p>
+   <p [style.background]="$odd ? 'red' : 'yellow'">
+      {{item}}
+   </p>
 } -->
 
+@for (num of numbers; track $index) {
+    <div>
+        <strong>{{num}}</strong>
 
-<!-- @for (u of users; track u.name) {
-   <div>
-      <h4>{{u.name}}</h4>
-      <p>Age: {{u.age}}</p>
-   </div>
-} -->
-
-
-@for (fruit of items; track $index; let i = $index){
-     <p>{{fruit}}</p>
-     <button (click)="removeItem(i)">Delete</button>
+        <span> | Index: {{$index}}</span>
+        <span> | Even: {{$even}}</span>
+        <span> | Odd: {{$odd}}</span>
+        <span> | First: {{$first}}</span>
+        <span> | Last: {{$last}}</span>
+        <span> | Count: {{$count}}</span>
+    </div>
 }

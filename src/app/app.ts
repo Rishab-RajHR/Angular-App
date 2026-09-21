@@ -9,15 +9,6 @@ import { Component, signal } from '@angular/core';
 export class App {
   //  items = ['HTML','CSS','JavaScript', 'Angular'];
 
-  //  users = [
-  //    { name: 'Alex', age: 24 },
-  //    { name: 'John', age: 30 },
-  //    { name: 'Alice', age: 28 }
-  //  ];
+  numbers =[1,2,3,4,5];
 
-  items = ['Apple', 'Banana', 'Cherry', 'Date'];
-
-  removeItem(i: number) {
-    this.items.splice(i, 1);
-  }
 }
