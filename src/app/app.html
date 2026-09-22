@@ -1,12 +1,17 @@
-<h1>Toggle Button</h1>
+<h1>{{lName |uppercase }}</h1>
+<h1>{{uName |lowercase }}</h1>
 
-<!-- <button (click)="increment()">Increment</button> -->
-
-<!-- <button (click)="toggle()">Toggle</button> -->
-
-<button (click)="showMessage()">Save</button>
+<p>Short Date : {{ today | date:'short'}}</p>
+<p>Full Date : {{ today | date:'fullDate'}}</p>
+<p>Custom Date: {{today | date:'dd/MM/yyyy'}}</p>
 
 
-@if (message()){
-    <p>{{message()}}</p>
-}
+<p>INR: {{amount | currency: 'INR'}}</p>
+<p>USD: {{amount | currency: 'USD'}}</p>
+<p>EUR: {{amount | currency: 'EUR'}}</p>
+<p>Custom: {{amount | currency: 'INR': 'symbol':'1.0-0'}}</p>
+
+<p>{{per | percent}}</p>
+
+
+<p>{{user | json}}</p>

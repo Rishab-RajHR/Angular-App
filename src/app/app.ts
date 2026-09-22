@@ -1,56 +1,25 @@
-import { Component, effect, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 
 
 @Component({
-  imports: [],
+  imports: [CommonModule],
   selector: 'app-root',
   templateUrl:'./app.html',
   styleUrls: ['./app.css']
 })
 export class App {
-    //  count = signal(0);
+   lName = "alex"
+   uName = "ALEX"
 
-    //  constructor(){
-    //     effect(()=>{
-    //         console.log("Count Value:", this.count())
-    //     });
-    //  }
+   today = new Date();
 
-    //  increment(){
-    //     this.count.update(c => c + 1);
-    //  }
+   amount = 2500;
 
-    // isDarkMode = signal(false);
+   per = 0.35;
 
-    // constructor(){
-    //    effect(() => {
-    //        if(this.isDarkMode()){
-    //           document.body.style.backgroundColor = 'black';
-    //           document.body.style.color = 'white';
-    //        } else {
-    //           document.body.style.backgroundColor = 'white';
-    //           document.body.style.color = 'black';
-    //        }
-    //    });
-    // }
-
-    // toggle(){
-    //    this.isDarkMode.update(mode => !mode);
-    // }
-
-    message = signal("");
-
-    constructor(){
-      effect(()=>{
-         if(this.message()){
-            setTimeout(() => {
-               this.message.set("");
-            }, 1000);
-         }
-      });
-    }
-
-    showMessage(){
-       this.message.set("Hello, this is a temporary message!");
-    }
+   user = {
+      name: 'Alex',
+      age: 24
+   }
 }
