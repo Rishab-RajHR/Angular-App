@@ -1,38 +1,27 @@
-import { CommonModule } from '@angular/common';
+// import { FormsModule } from '@angular/forms';
 import { Component, computed, effect, signal } from '@angular/core';
 
 
 @Component({
-  imports: [CommonModule],
+  imports: [],
   selector: 'app-root',
   templateUrl:'./app.html',
   styleUrls: ['./app.css']
 })
 export class App {
-    // count  = signal(0);
-    // name = signal('Angular');
+  //  username = "Alex";
+  // name = signal('Alex');
 
-    // setCount(){
-    //    this.count.set(2);
-    // }
+  user = signal<{ name: string; age: number}>({
+     name:"Alex",
+     age: 25
+  })
 
-    count = signal(2);
-    price = signal(5);
+  updateName(value: string) {
+      this.user.update(user => ({ ...user, name: value }));
+  }
 
-    // doubleCount = computed(() => this.count() * 2);
-
-    total = computed(() => this.count() * this.price());
-    constructor(){
-      effect(() => {
-         console.log("Double Count:", this.total());
-      })
-    }
-
-    updateCount(){
-       this.count.update(c => c + 1);
-    }
-
-    updatePrice(){
-       this.count.update(p => p + 1);
-    }
+  updateAge() {
+     this.user.update(user => ({ ...user, age: user.age+1 }));
+  }
 }
