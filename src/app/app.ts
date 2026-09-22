@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 
 interface User {
    name: string;
@@ -12,21 +12,23 @@ interface User {
   styleUrls: ['./app.css']
 })
 export class App {
-   count = signal<number>(0);  // Signal Created
-   name = signal<string>('Angular');
-   isAdmin = signal<boolean>(true);
+  //  count = signal<number>(2);
 
-   numbers = signal<number[]>([1,20,25,30]);
-   user = signal<User>({
-       name: 'Alex',
-       age: 24
-   })
+  //  doubleCount = computed<number>(() => this.count() * 2);
+  //  tripleCount = computed<number>(() => this.count() * 3);
 
-   directUpdate(){
-     this.numbers.set([100,200,300]);
-   }
+  //  increment() {
+  //     this.count.set(this.count() + 1);
+  //  }
 
-   addNumber(){
-      this.numbers.update(arr => [...arr,400]);
-   }
+  // firstName = signal<string>('Mohit');
+  // lastName = signal<string>('Pandian');
+
+  // fullName = computed<string>(() => `${this.firstName()}.${this.lastName()}`);
+
+  price = signal<number[]>([10, 20, 30, 40, 50]);
+
+  total = computed<number>(() => {
+      return this.price().reduce((acc, curr) => acc + curr, 0);
+  });
 }
