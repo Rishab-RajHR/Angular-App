@@ -1,5 +1,10 @@
 import { Component, signal } from '@angular/core';
 
+interface User {
+   name: string;
+   age: number;
+}
+
 @Component({
   imports: [],
   selector: 'app-root',
@@ -7,20 +12,21 @@ import { Component, signal } from '@angular/core';
   styleUrls: ['./app.css']
 })
 export class App {
-   count = signal(0);  // Signal Created
-   val = 20;
+   count = signal<number>(0);  // Signal Created
+   name = signal<string>('Angular');
+   isAdmin = signal<boolean>(true);
 
-  //  count.update(c => c + 1); // Signal Updated
+   numbers = signal<number[]>([1,20,25,30]);
+   user = signal<User>({
+       name: 'Alex',
+       age: 24
+   })
 
-  // items.mutate(a => a.push(4));  // Signal Mutated
+   directUpdate(){
+     this.numbers.set([100,200,300]);
+   }
 
-  increment(){
-    this.count.update(c => c + 1);
-  }
-  decrement(){
-    this.count.update(c => c - 1);
-  }
-  reset(){
-    this.count.set(0);
-  }
+   addNumber(){
+      this.numbers.update(arr => [...arr,400]);
+   }
 }

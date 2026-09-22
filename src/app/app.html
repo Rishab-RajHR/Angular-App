@@ -1,11 +1,7 @@
-<h2>Signal</h2>
+<h1>{{count()}}</h1>
 
-<!-- <p> Value : {{val}}</p> -->
-<p> Count: {{count()}}</p>
+<h2>{{user().name}}. {{user().age}}</h2>
 
-<button (click)="increment()">+</button>
-<button (click)="decrement()">-</button>
-<button (click)="reset()">Reset</button>
-
-<!-- <button (click)="count.set(50)">Change Signal</button> -->
-<!-- <button (click)="val++">Change Signal</button> -->
+<h3>Numbers: {{numbers()}}</h3>
+<button (click)="directUpdate()">Direct Update</button>
+<button (click)="addNumber()">Add Number</button>
