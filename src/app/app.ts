@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, computed, effect, signal } from '@angular/core';
 
 
 @Component({
@@ -9,17 +9,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.css']
 })
 export class App {
-   lName = "alex"
-   uName = "ALEX"
+    // count  = signal(0);
+    // name = signal('Angular');
 
-   today = new Date();
+    // setCount(){
+    //    this.count.set(2);
+    // }
 
-   amount = 2500;
+    count = signal(2);
+    price = signal(5);
 
-   per = 0.35;
+    // doubleCount = computed(() => this.count() * 2);
 
-   user = {
-      name: 'Alex',
-      age: 24
-   }
+    total = computed(() => this.count() * this.price());
+    constructor(){
+      effect(() => {
+         console.log("Double Count:", this.total());
+      })
+    }
+
+    updateCount(){
+       this.count.update(c => c + 1);
+    }
+
+    updatePrice(){
+       this.count.update(p => p + 1);
+    }
 }
