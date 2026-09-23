@@ -1,5 +1,5 @@
 // import { FormsModule } from '@angular/forms';
-import { Component, computed, effect, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 
 @Component({
@@ -9,19 +9,35 @@ import { Component, computed, effect, signal } from '@angular/core';
   styleUrls: ['./app.css']
 })
 export class App {
-  //  username = "Alex";
-  // name = signal('Alex');
+    newTodo = signal('');
 
-  user = signal<{ name: string; age: number}>({
-     name:"Alex",
-     age: 25
-  })
+    todos = signal<{ text: string; done: boolean }[]>([]);
 
-  updateName(value: string) {
-      this.user.update(user => ({ ...user, name: value }));
-  }
+    addTodo(){
+      const text = this.newTodo().trim();
 
-  updateAge() {
-     this.user.update(user => ({ ...user, age: user.age+1 }));
-  }
+      if (text === '' ) {
+         return;
+      }
+
+      this.todos.update( list => [...list, { text, done: false} ] );
+
+      this.newTodo.set('');
+
+       }
+
+      toggleTodo( index : number ){
+         this.todos.update( list =>
+            list.map(( item, i ) =>
+              i === index ? { ...item, done: !item.done } : item
+            )
+         );
+      }
+
+      deleteTodo( index: number) {
+         this.todos.update( list =>
+            list.filter( ( _, i ) => i !== index )
+         );
+      }
+
 }
