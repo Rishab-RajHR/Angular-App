@@ -9,35 +9,45 @@ import { Component, signal } from '@angular/core';
   styleUrls: ['./app.css']
 })
 export class App {
-    newTodo = signal('');
+    // count = signal(0);
+    // isLoggedIn = signal(false);
 
-    todos = signal<{ text: string; done: boolean }[]>([]);
+    // items = signal<string[]>([
+    //     "Angular",
+    //     "React",
+    //     "Vue"
+    // ])
 
-    addTodo(){
-      const text = this.newTodo().trim();
+    // addItem() {
+    //    this.items.update( items => [...items, "HTML"] );
+    // }
 
-      if (text === '' ) {
-         return;
-      }
+    role = signal<'admin' | 'user' >('user');
 
-      this.todos.update( list => [...list, { text, done: false} ] );
+    features = signal<string[]>([
+       "dashboard",
+       "Profile",
+       "Settings"
+    ]);
 
-      this.newTodo.set('');
+    makeAdmin() {
+      this.role.set('admin');
+      this.features.set([
+         "Dashboard",
+         "Profile",
+         "Settings",
+         "Admin Panel",
+         "User Management"
+      ]);
+    }
 
-       }
-
-      toggleTodo( index : number ){
-         this.todos.update( list =>
-            list.map(( item, i ) =>
-              i === index ? { ...item, done: !item.done } : item
-            )
-         );
-      }
-
-      deleteTodo( index: number) {
-         this.todos.update( list =>
-            list.filter( ( _, i ) => i !== index )
-         );
-      }
+    makeUser() {
+       this.role.set('user');
+       this.features.set([
+          "Dashboard",
+          "Profile",
+          "Settings"
+       ]);
+    }
 
 }

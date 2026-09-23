@@ -1,24 +1,40 @@
-<h1>Todo App</h1>
+<!-- <h2>{{ count() }}</h2>
 
-<input placeholder="Write Something..."
-   [value]="newTodo()"
-    (input)="newTodo.set($event.target.value)" >
 
-<button (click)="addTodo()">Add</button>
+@if (isLoggedIn()){
+   <p>Welcome Mohit</p>
+} @else {
+    <p>Welcome User</p>
+}
 
-<hr>
 
+<button (click)="isLoggedIn.set(true)">Login</button>
+<button (click)="isLoggedIn.set(false)">Logout</button>
 
 <ul>
-   @for (todo of todos(); track $index) {
-       <li>
-           <span>{{ $index + 1 }}</span>
+   @for (item of items(); track $index) {
+      <li>{{ item }}</li>
+   }
+</ul>
 
-           <span (click)="toggleTodo($index)"
-               [style.text-decoration] = "todo.done ? 'line-through' : 'none' ">
-           </span>
+<button (click)="addItem()">Add Item</button> -->
 
-           <button (click)="deleteTodo($index)">Delete</button>
-       </li>
+
+<h1> User Dashboard </h1>
+
+<button (click)="makeUser()">User</button>
+<button (click)="makeAdmin()">Admin</button>
+
+@if (role() === 'admin'){
+    <p>Welcome Admin</p>
+} @else {
+    <p>Normal User</p>
+}
+
+<h3>Available Features</h3>
+
+<ul>
+   @for (feature of features(); track $index){
+      <li>{{ feature }}</li>
    }
 </ul>
