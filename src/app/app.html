@@ -1,20 +1,40 @@
-<!-- <h2>Counter App</h2>
+<!-- <h2> Template-Driven Form + Signal</h2>
 
-<p>Current Count: {{ counterStore.count() }}</p>
+<input
+[(ngModel)]="name"
+(ngModelChange)="name.set($event)"
+placeholder="Enter your name"
+>
 
-<button (click)="counterStore.increment()">+</button>
-<button (click)="counterStore.decrement()">-</button>
-<button (click)="counterStore.reset()">Reset</button> -->
+<br><br>
+
+<input
+[(ngModel)]="email"
+(ngModelChange)="email.set($event)"
+placeholder="Enter your email"
+>
+
+<br><br>
+
+<button (click)="submitForm()">Submit</button>
+
+<p>Name: {{name()}}</p>
+<p>Email: {{email()}}</p> -->
 
 
-<h2> Application </h2>
+<h2>Reactive Signal Form</h2>
 
-@if (userStore.user()){
-   <p> Welcome {{userStore.user()!.name}}</p>
-   @if (userStore.isAdmin()){
-      <p> Admin Access</p>
-   }
-   <button (cancel)="userStore.logout()">Logout</button>
-} @else {
-   <button (click)="userStore.login('Alex','admin')">Login as Admin</button>
-}
+<form [formGroup]="form">
+    <input formControlName="name" placeholder="Name">
+    <br><br>
+    <input formControlName="email" placeholder="Email">
+    <br><br>
+</form>
+
+<button (click)="submitForm()">Submit</button>
+
+<!-- <p>Name: {{form.get('name')?.value}}</p>
+<p>Email: {{form.get('email')?.value}}</p> -->
+
+<p>Signal Value:</p>
+<pre>{{userSignal() | json}}</pre>
