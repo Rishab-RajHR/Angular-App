@@ -1,12 +1,14 @@
 import { Component, signal } from '@angular/core';
-import { Card } from './card/card';
+import { Button } from './button/button';
 
 @Component({
-  imports: [Card],
+  imports: [Button],
   selector: 'app-root',
   templateUrl:'./app.html',
   styleUrls: ['./app.css']
 })
 export class App {
-
+   saveData(){
+      console.log("Data Fetch");
+   }
 }
