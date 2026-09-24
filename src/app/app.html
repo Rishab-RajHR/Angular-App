@@ -1,4 +1,8 @@
-<app-button
-     [label]="'Save'"
-     (clicked)="saveData($event)">
-</app-button>
+<app-form-field
+      [label]="'Email'"
+      [type]="'email'"
+      (valueChange)="onEmailChange($event)">
+</app-form-field>
+
+
+<p>Email : {{email}}</p>

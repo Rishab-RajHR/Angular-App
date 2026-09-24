@@ -1,14 +1,17 @@
 import { Component, signal } from '@angular/core';
-import { Button } from './button/button';
+import { FormField } from './form-field/form-field';
 
 @Component({
-  imports: [Button],
+  imports: [FormField],
   selector: 'app-root',
   templateUrl:'./app.html',
   styleUrls: ['./app.css']
 })
 export class App {
-   saveData(){
-      console.log("Data Fetch");
+   email = '';
+
+   onEmailChange(value: string) {
+      console.log('Email:', value);
+      this.email = value;
    }
 }
