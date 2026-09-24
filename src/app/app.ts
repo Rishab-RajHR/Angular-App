@@ -1,17 +1,12 @@
 import { Component, signal } from '@angular/core';
-import { FormField } from './form-field/form-field';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
-  imports: [FormField],
+  imports: [RouterLink, RouterOutlet],
   selector: 'app-root',
   templateUrl:'./app.html',
   styleUrls: ['./app.css']
 })
 export class App {
-   email = '';
 
-   onEmailChange(value: string) {
-      console.log('Email:', value);
-      this.email = value;
-   }
 }
