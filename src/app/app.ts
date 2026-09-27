@@ -1,24 +1,21 @@
-import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
 import { form } from '@angular/forms/signals';
+import { User } from './user';
 
 @Component({
-  imports: [CommonModule],
+  imports: [],
   selector: 'app-root',
   templateUrl:'./app.html',
   styleUrls: ['./app.css']
 })
 export class App {
-  // Form model based on signals
-  loginModel = signal({
-      email: '',
-      password: ''
-  })
+   users: any[] = [];
 
-  // Create form from signal Model
-  loginForm = form(this.loginModel);
+   constructor(private userService: User){}
 
-  submit() {
-    console.log(this.loginModel);
-  }
+   ngOnInit() {
+      this.userService.getUsers().subscribe((data: any)=>{
+          this.users = data;
+      })
+   }
 }
