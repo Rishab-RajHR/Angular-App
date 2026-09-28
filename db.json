@@ -1,10 +1,35 @@
 {
-   "users": [
-      {
-         "id": 1,
-         "name": "Alice",
-         "email": "alice@gmail.com",
-         "isActive": true
-      }
-   ]
+  "users": [
+    {
+      "id": "1",
+      "name": "Alice",
+      "email": "alice@gmail.com",
+      "isActive": true
+    },
+    {
+      "name": "Tovino",
+      "email": "tovino12@gmail.com",
+      "isActive": false,
+      "id": "FiTT74k1OaM"
+    },
+    {
+      "name": "Nivin",
+      "email": "nivin12@gmail.com",
+      "isActive": false,
+      "id": "roURjnBeYMY"
+    },
+    {
+      "name": "George",
+      "email": "george12@gmail.com",
+      "isActive": false,
+      "id": "iNofJOi33zI"
+    },
+    {
+      "name": "Sumanth",
+      "email": "sumanth12@gmail.com",
+      "isActive": true,
+      "id": "dx6gIEslPVw"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
