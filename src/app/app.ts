@@ -20,6 +20,8 @@ export class App {
     name = signal<string>('');
     email = signal<string>('');
 
+    editingUpdateID = signal<number | null>(null);
+
     constructor( private userService: UserService){}
 
     ngOnInit(){
@@ -29,21 +31,48 @@ export class App {
     loadUsers(){
         this.userService.getUsers().subscribe( data => {
            this.users.set(data)
-        })
+        });
     }
 
+    // Clicked Edit
+    editUser(user: User){
+       this.editingUpdateID.set(user.id!);
+       this.name.set(user.name);
+       this.email.set(user.email);
+    }
+
+    // Add and Update User
     submitForm(){
       const payload: User = {
          name: this.name(),
          email: this.email(),
          isActive: false
       };
-      this.userService.addUser(payload).subscribe( () =>{
+
+      // Update the user
+      if(this.editingUpdateID() !== null){
+          this.userService.updateUser(
+              this.editingUpdateID()!,
+              payload
+          ).subscribe(() =>{
+             alert('User Updated Successfully');
+             this.afterSave();
+          })
+      } else {
+         // Add User
+         this.userService.addUser(payload).subscribe( () =>{
          alert('User Added Successfully');
-         this.loadUsers();  // Refresh the user list after adding a new user
-         this.name.set('');
-         this.email.set('');
+         this.afterSave();
       })
+      }
+
+    }
+
+    afterSave(){
+      this.loadUsers();
+      this.name.set('');
+      this.email.set('');
+      this.editingUpdateID.set(null);
     }
 }
 

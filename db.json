@@ -1,10 +1,10 @@
 {
   "users": [
     {
-      "id": "1",
-      "name": "Alice",
-      "email": "alice@gmail.com",
-      "isActive": true
+      "name": "Allu",
+      "email": "allu12@gmail.com",
+      "isActive": false,
+      "id": "1"
     },
     {
       "name": "Tovino",
@@ -25,8 +25,8 @@
       "id": "iNofJOi33zI"
     },
     {
-      "name": "Sumanth",
-      "email": "sumanth12@gmail.com",
+      "name": "Darshan Thogudeep",
+      "email": "darshan12@gmail.com",
       "isActive": true,
       "id": "dx6gIEslPVw"
     }
