@@ -3,6 +3,7 @@ import { form } from '@angular/forms/signals';
 import { User } from './user';
 import { Observable } from 'rxjs';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { UserService } from './user-service';
 
 @Component({
   imports: [],
@@ -11,8 +12,8 @@ import { toSignal } from '@angular/core/rxjs-interop';
   styleUrls: ['./app.css']
 })
 export class App {
-   userService = inject(User);
+    userService = inject(UserService);
 
-   users:any = toSignal(this.userService.getUsers());
+    users : any = toSignal(this.userService.getUsers())
 }
 
