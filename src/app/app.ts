@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { UserService } from './services/user-service';
 import { User } from './models/user';
+import { isActive } from '@angular/router';
 
 @Component({
   imports: [],
@@ -65,7 +66,16 @@ export class App {
          this.afterSave();
       })
       }
+    }
 
+    toggleStatus(user: User) {
+       this.userService.updateUserStatus(user.id!, !user.isActive).subscribe(() => {
+          this.users.update( list =>
+              list.map( u =>
+                 u.id === user.id ? { ...u, isActive: !u.isActive } : u
+              )
+          )
+       })
     }
 
     afterSave(){

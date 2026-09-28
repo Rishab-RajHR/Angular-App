@@ -22,13 +22,15 @@
       "name": "George",
       "email": "george12@gmail.com",
       "isActive": false,
-      "id": "iNofJOi33zI"
+      "id": "iNofJOi33zI",
+      "status": false
     },
     {
       "name": "Darshan Thogudeep",
       "email": "darshan12@gmail.com",
-      "isActive": true,
-      "id": "dx6gIEslPVw"
+      "isActive": false,
+      "id": "dx6gIEslPVw",
+      "status": false
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
