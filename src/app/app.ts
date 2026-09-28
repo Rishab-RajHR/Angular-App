@@ -1,9 +1,9 @@
 import { Component, inject, signal } from '@angular/core';
 import { form } from '@angular/forms/signals';
-import { User } from './user';
 import { Observable } from 'rxjs';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { UserService } from './user-service';
+import { UserService } from './services/user-service';
+import { User } from './models/user';
 
 @Component({
   imports: [],
@@ -14,6 +14,6 @@ import { UserService } from './user-service';
 export class App {
     userService = inject(UserService);
 
-    users : any = toSignal(this.userService.getUsers())
+    users = toSignal<User[]>(this.userService.getUsers())
 }
 
