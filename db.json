@@ -1,12 +1,6 @@
 {
   "users": [
     {
-      "name": "Allu",
-      "email": "allu12@gmail.com",
-      "isActive": false,
-      "id": "1"
-    },
-    {
       "name": "Tovino",
       "email": "tovino12@gmail.com",
       "isActive": false,
@@ -23,13 +17,6 @@
       "email": "george12@gmail.com",
       "isActive": false,
       "id": "iNofJOi33zI",
-      "status": false
-    },
-    {
-      "name": "Darshan Thogudeep",
-      "email": "darshan12@gmail.com",
-      "isActive": false,
-      "id": "dx6gIEslPVw",
       "status": false
     }
   ],
