@@ -8,10 +8,10 @@ import { Component, inject, signal } from '@angular/core';
 })
 export class App {
 
-   name = signal('Alex Pandian');
+   name = signal('DMK');
 
-   submitForm() {
-       alert(`User ${this.name()} saved successfully!`);
+   submitForm(){
+       alert(`User ${this.name()} saved!`);
    }
 
 }
