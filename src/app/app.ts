@@ -7,12 +7,15 @@ import { Component, inject, signal } from '@angular/core';
   styleUrls: ['./app.css']
 })
 export class App {
+    selectedColor = signal('#3498db');
 
-   name = signal('DMK');
+    onColorChange(newColor: string) {
+        this.selectedColor.set(newColor);
+    }
 
-   submitForm(){
-       alert(`User ${this.name()} saved!`);
-   }
-
+    copyColor() {
+       navigator.clipboard.writeText(this.selectedColor());
+       alert('Color Copied: ' + this.selectedColor());
+    }
 }
 
